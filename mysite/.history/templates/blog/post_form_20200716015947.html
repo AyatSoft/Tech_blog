@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<div class="container techfont">
+  <h1>New post</h1>
+
+  <script>
+    var editor = new MediumEditor(".editable");
+  </script>
+  <form method="POST" class="post-form">
+    {% csrf_token %} {{form.title|crispy}}
+    <button type="submit" class="btn btn-danger btn-lg">Save</button>
+  </form>
+
+  <style></style>
+</div>
+{% endblock %}
